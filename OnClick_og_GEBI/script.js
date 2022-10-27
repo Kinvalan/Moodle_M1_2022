@@ -6,3 +6,5 @@ div.style.display = 'none';
 button.onclick = () => {
     div.style.display = 'block';
 }
+
+document.getElementById("header")
