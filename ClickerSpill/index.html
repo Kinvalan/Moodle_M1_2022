@@ -1,17 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TigerClicker</title>
+    <title>BearClicker</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-    <h1>TigerClicker - the game</h1>
+    <div class="container" id="app"></div>
 
-    <p>Klikk på tigeren for å spille</p>
+    <script>
 
-    <button id="points" >test</button>
-   
+        // Model
+
+        let points = 0;
+        let pointsPerClick = 1;
+        let bearIndex = 0;
+        const sittingBear = `<img src="img/sittingBear.png"/>`;
+        const standingBear = `<img src="img/standingBear.png"/>`;
+
+        // Controller
+
+        function doClick() {
+            points += pointsPerClick;
+            bearIndex = 1 - bearIndex;
+            updateView();
+        }
+
+        function buyUpgrade(numberadd, cost) {
+            if (points < cost) return;
+            points -= cost;
+            pointsPerClick += numberadd;
+            updateView();
+        }
+
+        function warning() {
+            alert("Juksemaker pipelort!");
+            updateView();
+        }
+
+        let indexOfChangeImage = 0;
+
+        function changeImage() {
+
+            if (indexOfChangeImage == 0) {
+                bearIndex = sittingBear;
+            }
+            if (indexOfChangeImage == 1) {
+                bearIndex = standingBear;
+            }
+
+            else {
+                updateView();
+                return;
+            }
+
+            console.log(indexOfChangeImage);
+            animation();
+
+        }
+
+        // View
+
+        function animation() {
+            document.getElementById(`app`).innerHTML = /*HTML*/ `
+            ${bearIndex}`;
+        }
+        updateView()
+        function updateView() {
+            let bear = bearIndex == 0 ? standingBear : sittingBear;
+
+            document.getElementById(`app`).innerHTML = /*HTML*/ `
+            <h1 class="maintitle">BearClicker</h1>
+            <div id="image" onclick="doClick()" class="bear">${bear}</div>
+            <div id="pointsInfo" class="pointsnumber">${points}</div>
+
+            <div class="upgrades">
+                <button onclick="buyUpgrade(1, 10)" class="button" role="button"><span class="text"><br/>
+                    OPPGRADER +1<br/><i> 10 bjørner</span></button>
+
+                <button onclick="buyUpgrade(10, 100)" class="button" role="button"><span class="text"><br/>
+                    OPPGRADER +10<br/> <i> 100 bjørner</span></button>
+
+                <button onclick="buyUpgrade(100, 1000)" class="button" role="button"><span class="text"><br/>
+                    OPPGRADER +100<br/><i> 1000 bjørner</span></button>
+            </div>
+
+                <div class= "cheater">
+                    <button onclick="warning()" onclick="buyUpgrade(1000, 100000)" class="button" role="button"><span class="text">
+                    <br/>Uendelig med bjørner!<br/>
+                    <i> Sikker på at du vil jukse?</span></button>
+                </div>
+            `;
+        }
+
+    </script>
+
 </body>
+
 </html>
