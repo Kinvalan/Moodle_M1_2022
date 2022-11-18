@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tippe-spill</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+
+
+    <script>
+
+        // Script i MVC format for å lage et spill hvor man gjetter et hemmelig tall.
+
+
+
+        // Model
+        let guessNumber;
+        let secretNumber;
+
+
+
+
+        // View
+
+
+        function updateView() {
+            const guessText = guessNumber == null ? '' : `Du tippet ${guessNumber}.<br/>`;
+
+
+            let isCorrectOrNotText;
+
+            // 1. Sjekker om man ikke har tippet noe tall. Stemmer det, får du teksten under.
+
+            if (guessNumber == null) {
+                isCorrectOrNotText = 'Skriv inn tallet du vil tippe i feltet under og trykk på knappen "Tipp".<br/>';
+
+            // 2. Sjekker om det man har tippet er riktig. Stemmer det, får man teksten under.   
+
+            } else if (guessNumber == secretNumber) {
+                isCorrectOrNotText = `Du har tippet ${secretNumber}, som er riktig!</b>`;
+
+            // 3. Sjekker om det man tippet er MINDRE enn det hemmelige tallet. Stemmer det, får man teksten under.   
+
+            } else if (guessNumber < secretNumber) {
+                isCorrectOrNotText = 'Du har tippet for lavt.';
+
+            // 4. Sjekker om det man tippet er STØRRE enn det hemmelige tallet. Stemmer det, får man teksten under.        
+
+            } else {
+                isCorrectOrNotText = 'Du har tippet for høyt.';
+            }
+
+
+
+            document.getElementById('app').innerHTML = /*HTML*/ `
+
+                <h2>Tipp-tallet-spillet</h2>
+
+                ${guessText}
+                ${isCorrectOrNotText}
+
+                
+                <input type = "text" oninput="guessNumber = parseInt(this.value)" />
+                <button onclick="guess()" >Tipp</button>
+
+                <button onclick="startGame()">Start på nytt</button>
+            `;
+        }
+
+
+
+
+        // Controller
+
+
+        startGame();
+        function startGame() {
+            guessNumber = null;
+            secretNumber = Math.ceil(Math.random() * 100);
+            updateView();
+        }
+
+
+        function guess() {
+            updateView();
+        }
+
+        
+    </script>
+
+</body>
+
+</html>

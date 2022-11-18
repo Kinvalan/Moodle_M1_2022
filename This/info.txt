@@ -1,0 +1,13 @@
+Eksempel
+Gå gjennom eksemplet og test det på din egen pc. 
+------------------
+
+Oppgave
+Denne html-koden lager en tabell med to rader og to celler: <table><tr><td>o</td><td>o</td></tr><tr><td>o</td><td>o</td></tr></table>
+Utvid tabellen med flere rader og flere kolonner. 
+Sørg så for at når man har musepekeren over en celle, så endrer innholdet seg fra o til x.
+
+-------------------
+
+Eksperimenter
+Bruk litt tid på å eksperimentere videre med det du har lært til nå.

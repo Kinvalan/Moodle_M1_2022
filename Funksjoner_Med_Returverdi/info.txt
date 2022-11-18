@@ -1,0 +1,7 @@
+
+Ta med en parameter til, f.eks: text-farge, border eller noe annet. 
+
+Lag en funksjon til som returnerer den endringen, uten å endre det som står fra før, bare legge til. 
+
+
+ 

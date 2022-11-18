@@ -1,0 +1,24 @@
+
+
+Utvid eksemplet. Lag en funksjon som finner en tilfeldig bokstav. 
+
+
+Begynn med å lage en kopi av funksjonen tilfeldigTallEllerBokstavABCDEF() som du kaller tilfeldigBokstav(). 
+
+Trekk et tilfeldig tall som er minimum 0 og maksimum 28. Først sjekker du om tallet er 28, i så fall returnerer du 'å'. (Du kan ha mange return-setninger.) 
+
+Hvis tallet er 27, returnerer du 'ø'. Hvis tallet er 26, returnerer du 'æ'. 
+
+Ellers returnerer du tallet + charCodeA på samme måte som i funksjonen du kopierte. 
+
+
+
+
+
+Vis så en tilfeldig bokstav inne i hver firkant. 
+
+
+
+Når det virker, utvider du med en funksjon for å lage et tilfeldig "ord" på 5 bokstaver. Vis dette tilfeldige ordet inne i hver firkant. 
+
+
