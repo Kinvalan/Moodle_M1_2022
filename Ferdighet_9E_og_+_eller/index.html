@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Change background color</title>
+    <style>
+        .gffdlkfdkfd {
+            color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Ferdighet 9e - Valgsetninger - Sammenligne flere ting på en gang (eller)</p>
+
+    <div id="app"></div>
+</body>
+
+<script>
+        
+    // Model
+
+    let chosenColor;
+    let colorSelectValue = document.getElementsByName('colorSelector').value
+    let colorValue;
+
+
+    // View
+
+    // Her velger man hvit forgrunnsfarge (tekstfarge) hvis valgt farge er svart eller mørk blå - og svart tekstfarge ellers.
+
+    updateView()
+
+    function updateView(){
+    document.getElementById('app').innerHTML = /*HTML*/ `
+    
+    <select onchange="changeColor(this.value)" name="colorSelector" id="colorSelector1">
+
+    <option value="">--Please pick a color--</option>
+    <option value="black">Black</option>
+    <option value="darkblue">Dark blue</option>
+    <option value="lightgrey">Light grey</option>
+    <option value="lightgreen">Light green</option>
+    <option value="lightcoral">Light red</option>
+    <option value="#d9e3fe">Original colors</option>
+
+    </select>
+
+    <div style="padding: 60px; height: 200px; width: 200px; background-color: ${chosenColor}; color: ${colorValue}">Eksempel tekst</div>  
+    `;
+    }
+
+
+
+    // Controller
+
+
+    function changeColor(pickedColor){
+    console.log(pickedColor)
+    chosenColor = pickedColor;
+
+    if (pickedColor == 'black' || pickedColor == 'darkblue'){
+        colorValue = 'white'
+    }
+    else if (pickedColor == "#d9e3fe") {colorValue = 'blue'}
+    else {colorValue = 'black'}
+
+    updateView();
+}
+
+</script>
+
+</html
+
+

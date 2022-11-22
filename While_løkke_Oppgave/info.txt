@@ -1,0 +1,8 @@
+Lag en funksjon som generer 2 random tall så lenge tallene er ulike fra hverandre.
+
+Når de er like print ut teksten "Equal numbers found" - samt hvilke tall det ble =)
+
+kan eventuelt også console.log() tallene for hver runde
+
+OBS: Nettleseren er ikke glad i å oppdatere view mens i en while-loop!
+

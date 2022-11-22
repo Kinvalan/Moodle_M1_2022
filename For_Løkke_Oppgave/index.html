@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2-gangen med for-løkke</title>
+</head>
+<body>
+
+<div id="app"></div>
+    
+<script>
+
+// Let og const
+// Model
+
+let stopValue = 10;
+let numbers = []
+
+//Eks:
+// let numbers = [2,5,6,4,3]
+// syntaxen: numbers[4]
+// Indexen begynner på 0 og teller oppover, tallet 4 har derfor indexen 3.
+
+
+
+
+// HTML og CSS
+// View
+
+updateView()
+function updateView(){
+    let html = `  
+    <button onclick="toGangen()">Trykk her for å se 2-gangen!</button>
+    `;
+
+    html += `<ul>`;
+    for(let i = 0; i < numbers.length; i++){
+        html += '<li>' + numbers[i] + '</li>';
+    }
+    
+  html += `</ul>`;
+
+  document.getElementById('app').innerHTML= html;
+  
+}
+
+
+
+
+// Funksjoner utenom updateView
+// Controller
+
+function toGangen(){
+    numbers = []
+    for(let counter = 1; counter<=stopValue; counter++){
+        const product = counter * 2;
+        numbers.push(product)
+        console.log(product)
+    }
+    updateView();
+}
+
+
+
+
+</script>
+
+
+</body>
+</html>
