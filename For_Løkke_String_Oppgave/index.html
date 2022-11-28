@@ -15,6 +15,18 @@
 
 // Model
 
+let vocalA = 0;
+let vocalE = 0;
+let vocalI = 0;
+let vocalO = 0;
+let vocalU = 0;
+let vocalY = 0;
+let vocalÆ = 0;
+let vocalØ = 0;
+let vocalÅ = 0;
+
+let numberOfVocals;
+let text;
 
 
 
@@ -24,8 +36,13 @@
 updateView()
 function updateView(){
     let html = /*HTML*/ ` 
-    
-    
+    <input type="text" onchange="setText(this.value)">
+    <div>${numberOfVocals}</div>
+    <button onclick="reverseText()">Reverse the text</button>
+    <button onclick="countVocals()">Count vocals</button> 
+    <button onclick="totalVocals()">Total vocals</button> 
+    <button onclick="eToA()">Change E to A</button>
+    <div>${text}</div>
     `;
 
     document.getElementById('app').innerHTML = html;
@@ -45,24 +62,106 @@ function updateView(){
 // Lag en funksjon som teller opp antall vokaler i en string ved hjelp av en for-løkke
 // Vokaler: a, e, i, o, u, y, æ, ø, å
 
-function countVocals(){
-    for(let aCounter = 0; aCounter  acounter++ ){
-
+function totalVocals(){
+    numberOfVocals = 0;
+    for(let i = 0; i < text.length; i++){
+        let ch = text.charAt(i);
+        if(ch === 'a' ||ch === 'e' ||ch === 'i' ||ch === 'o' ||ch === 'u' ||ch === 'y' ||ch === 'æ' ||ch === 'ø' ||ch === 'å'){
+            numberOfVocals++;
+        }
     }
+console.log(numberOfVocals)
+
     updateView();
 }
 
 
-function printVocals(inputString){
-    let text = '';
+
+
+
+function countVocals(){
+    let charachter;
+    for(let i = 0; i<text.length; i++){
+        charachter = text.charAt(i);
+        
+        if(charachter === "a"){
+            vocalA++
+            console.log(charachter);
+        } 
+        else if(charachter === "e"){
+            vocalE++
+            console.log(charachter);
+        }
+        else if(charachter === "i"){
+            vocalI++
+            console.log(charachter);
+        }
+        else if(charachter === "o"){
+            vocalO++
+            console.log(charachter);
+        }
+        else if(charachter === "u"){
+            vocalU++
+            console.log(charachter);
+        }
+        else if(charachter === "y"){
+            vocalY++
+            console.log(charachter);
+        }
+        else if(charachter === "æ"){
+            vocalÆ++
+            console.log(charachter);
+        }
+        else if(charachter === "ø"){
+            vocalØ++
+            console.log(charachter);
+        }
+        else if(charachter === "å"){
+            vocalÅ++
+            console.log(charachter);
+        }
+    }  
+    updateView(); 
 }
 
 
+function setText(inputText){
+    text = String(inputText);
+    updateView();
+}
+
+// Funksjon som bytter alle e-er mot a-er i den teksten du skriver i input-feltet ved hjelp av array og for-løkke.
+
+function eToA(){
+    let changedText = '';
+    let textArray = [];
+    for(let i = 0; i < text.length; i++){
+        textArray.push(text.charAt(i))
+    }
+
+    
+
+    for(let j = 0; j < textArray.length; j++){
+        if(textArray[j] === 'e'){
+            textArray[j] = 'a';
+        }
+        changedText += textArray[j];
+    }
+        text = changedText;
+
+    updateView();
+}
 
 
-// Lag en funksjon som tar input fra brukeren og reverserer teksten ved hjelp av en for-løkke
+// Funksjon som tar input fra brukeren og reverserer teksten ved hjelp av en for-løkke
 
 function reverseText(){
+    let reversedText="";
+
+    for(let i = (text.length - 1); i >= 0; i--){
+        reversedText += text.charAt(i);
+    }
+        text = reversedText;
 
     updateView();
 }

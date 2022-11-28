@@ -1,0 +1,11 @@
+ 
+
+Oppgave 1:
+----------
+
+Denne videoen viser hvordan man looper igjennom et array - og kan se ett og ett element i nettleserkonsollen. 
+
+Bruk en for loop og eksperimenter videre for å få til å heller vise dette i viewet
+
+
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: brown;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script>
+
+
+
+        // Model
+
+        let shoppingCart = [];
+        let cartContent = '';
+
+
+
+
+
+        // View
+
+        updateView()
+        function updateView(){
+            document.getElementById('app').innerHTML = /*HTML*/ ` 
+            <p>Handlevogn:</p>
+            <button id = "addItemButton" onclick = "addToCart()">Legg vare i handevogna</button>
+            <input type = "text" onchange = "updateValue(this.value)" id = "inputField">
+            <div id = "displayArea"></div>
+            `;
+
+            /* 
+             - I for-løkka under har vi indexen "i", den starter på 0, looper så lenge "i" er mindre enn eller lik lengden til arrayet "shoppingCart".
+             - "i" øker med en pr runde. For hver gang denne loopen går, vil displayArea-div-ens innhold oppdateres med en liste.
+             - I denne lista har vi verdien til shoppingCart og "i". Da vil vi se verdien til shoppingCart samt hvilken index vi er på.  
+            */
+
+            for(let i = 0; i <= shoppingCart.length - 1; i++){
+                document.getElementById('displayArea').innerHTML += /*HTML*/ `
+                <li>${shoppingCart[i]}</li>
+                `;
+            }
+            
+        }
+
+
+
+
+        // Controller
+  
+        function updateValue(inputValue){
+            inContent = inputValue;
+        }
+      
+
+
+        function addToCart(){
+            shoppingCart.push(inContent)
+            updateView();
+            console.log(shoppingCart)
+        }
+
+
+      
+
+    </script>
+
+
+
+</body>
+</html>

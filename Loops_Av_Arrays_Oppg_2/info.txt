@@ -1,0 +1,10 @@
+Oppgave 2: 
+----------
+
+Bruk det du har lært om å legge inn data i arrays og hvordan å hente data fra arrays og lag en handlevogn!
+
+Når du trykker på knappen "add to cart", tar du inn input fra brukeren og legger til og oppdaterer listen din i viewet. 
+
+
+Det burde se slik ut: https://getacademy.moodlecloud.com/mod/page/view.php?id=800 
+

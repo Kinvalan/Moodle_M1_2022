@@ -1,59 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>While_Løkke_Oppgave</title>
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <div id ="app"></div>
-    <script>
-        
-        // ikke ferdig
 
+    <button onclick="twoRandomNumbers()">Generate numbers</button>
+    <div id="numbersDiv"></div>
 
-        // Model
-
-        let tall1 = 1;
-        let tall2 = 1;
-
-        let tallErLike = true;
-
-
-
-
-        // View
-
-        updateView()
-        function updateView(){
-            let html = /*HTML*/ `  
-            <button onclick="toRandomTall()">Trykk her for å generere to random tall</button>
-            <div id="tall1Div">Her kommer tall nr 1: ${tall2}</div>
-            <div id="tall2Div">Her kommer tall nr 2: ${tall1}</div>
-            `;
-            document.getElementById('app').innerHTML= html;
-        }
-
-
-
-
-        // Controller
-
-        function toRandomTall(){
-            while(tall1 != tall2){
-              tall1 = Math.floor((Math.random() * 10) + 1);
-              tall2 = Math.floor((Math.random() * 10) + 1); 
-              console.log(tall1)
-              console.log(tall2)
-            }
-            tallErLike = false;
-
-            updateView();
-        }
-
-
-
-    </script>
+    <script src="main.js" async defer></script>
 </body>
+
 </html>
