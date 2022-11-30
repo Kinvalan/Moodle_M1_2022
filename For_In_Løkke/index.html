@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<div id = "app"></div>    
+
+<script>
+
+/*
+For in - løkker blir som oftest brukt i forbindelse med objekter.
+I scriptet er det et enkelt eksempel på hvordan syntaxen er.
+*/
+
+
+
+// Symbols er et objekt her.
+
+const symbols = {
+    yt: "YouTube",
+    ig: "Instagram",
+    fb: "Facebook",
+}
+
+
+/* 
+Her skjer følgende:
+- Vi lager en for in - loop
+- Vi deklarerer konstanten "n" i "symbols".
+- Vi sier at elementet i dokumentet med id-en 'app' sitt innhold plusses på med en tekst.
+- Denne teksten i loopen har noen verdier også, de er verdien til "n" og verdien til "symbols" med indexen til "n".
+- Vi har også et line break tag "</br>" samt. tegnsetting. 
+- Med dette vil vi få tekst med verdier og hver tekst + verdi kommer på hver sin linje. 
+*/
+
+for (const n in symbols){
+    document.getElementById('app').innerHTML += (`Key is: ${n}, and value is: ${symbols[n]}. </br>`);
+}
+
+
+</script>
+
+
+
+
+</body>
+</html>

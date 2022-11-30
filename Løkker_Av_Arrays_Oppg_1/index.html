@@ -33,21 +33,17 @@
 
 
 
-// Denne videoen viser hvordan man looper igjennom et array - og kan se ett og ett element i nettleserkonsollen. 
-
-// Bruk en for loop og eksperimenter videre for å få til å heller vise dette i viewet
-
-
 
         // Controller
 
-        // function showLoopOfArray(){
-        //     for(let i = 0; i < pocketStuff.length; i++){
-        //         console.log(`På runde ${i} i loopen så ser jeg: ${pocketStuff[i]} `)
-        //     }
-        //     updateView();
-        // }
-
+    
+        /* 
+        - I funksjonen under må man skrive: ${pocketStuff[i]} og IKKE bare: ${pocketStuff}
+        - Grunnen til dette er at "i" er telleren vår.
+        - Når vi bruker "i" her vil vi ikke bare se alt som ligger i pocketStuff på en gang, men vi vil se 1 og 1 verdi ettersom loopen teller for oss.
+        - På runde 1 i loopen vil vi se verdien til pocketStuff når den første verdien blir talt på, her: 'Hat'.
+        - Så gjentar dette seg med alle verdiene. 
+        */
 
         function showLoopOfArray(){
             for(let i = 0; i < pocketStuff.length; i++){

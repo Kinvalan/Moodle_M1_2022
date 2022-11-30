@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script>
+
+        /* 
+        For of løkker blir som oftest brukt i forbindelse med arrays.
+        I scriptet er det et enkelt eksempel på hvordan syntaxen er. 
+        */
+
+
+
+        const names = ["YouTube", "Facebook", "Instagram"]
+
+
+
+         for(const n of names){
+           document.getElementById('app').innerHTML += (n + ", "); 
+         }
+
+         /* 
+         Ser man på koden med live server, vil man se teksten "YouTube, Facebook, Instagram," på nettsida.
+
+         Det skjer pga dette: 
+
+         - Lager en for-løkke.
+         - Deklarerer en konstant ved navn "n".
+         - Skriver "of names" som vil si: vi sier at "n" hører til names.
+         - "n" her blir en variabel for indexen til "names".
+         - Inne i for-løkka skriver vi: document.getElementById('app').innerHTML += (n + ", ");
+         - Det vi skreiv over betyr at et element i dokumentet sitt innhold skal plusses på med variabelen "n" og et komma med mellomrom. 
+         */
+
+      
+    </script>
+
+
+
+</body>
+
+</html>
