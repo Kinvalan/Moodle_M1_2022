@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>QUnit Example</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.9.2.css">
+</head>
+
+<body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture"></div>
+    <script src="https://code.jquery.com/qunit/qunit-2.9.2.js"></script>
+    <script src="lib.js"></script>
+
+    <input type = "text" onchange = "checkIfMail(this.value)">
+
+    <script>
+
+        // // Teksten inneholder ikke @.
+
+        // QUnit.test("Not mail", function (assert) {
+        //     const actual = checkIfMail('sebastianmollergmail.com');
+        //     const expected = (false);
+        //     assert.equal(actual, expected);
+        // });
+
+        // // Teksten inneholder @.
+
+        // QUnit.test("Mail", function (assert) {
+        //     const actual = checkIfMail('sebastianmoller@gmail.com');
+        //     const expected = (true);
+        //     assert.equal(actual, expected);
+        // });
+
+
+        
+        // Teksten inneholder space.
+
+        QUnit.test("Text with space", function (assert) {
+            const actual = checkIfMail('sebastianmoller@ gmail.com');
+            const expected = (false);
+            assert.equal(actual, expected);
+        });
+
+        // Teksten inneholder ikke space.
+
+        QUnit.test("Text without space", function (assert) {
+            const actual = checkIfMail('sebastianmoller@gmail.com');
+            const expected = (false);
+            assert.equal(actual, expected);
+        });
+
+
+        // Teksten har punktum både før og etter @.
+
+        QUnit.test("Text with double dots", function (assert) {
+            const actual = checkIfMail('sebastian.moller@gmail.com');
+            const expected = (true);
+            assert.equal(actual, expected);
+        });
+
+        // Teksten har hverken punktum før eller etter @.
+
+        QUnit.test("Text without any dots", function (assert) {
+            const actual = checkIfMail('sebastianmoller@gmailcom');
+            const expected = (false);
+            assert.equal(actual, expected);
+        });
+
+        // Teksten har punktum før @.
+
+        QUnit.test("Text with dot before @", function (assert) {
+            const actual = checkIfMail('sebastian.moller@gmailcom');
+            const expected = (false);
+            assert.equal(actual, expected);
+        });
+
+        // Teksten har punktum etter @.
+
+        QUnit.test("Text with dot after @", function (assert) {
+            const actual = checkIfMail('sebastianmoller@gmail.com');
+            const expected = (false);
+            assert.equal(actual, expected);
+        });
+
+
+      
+
+
+
+        
+
+    </script>
+
+</body>
+</html>
